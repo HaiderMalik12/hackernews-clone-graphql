@@ -1,5 +1,7 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { Prisma } = require('prisma-binding')
+require('dotenv').config()
+console.log(process.env.PRISMA_ENDPOINT)
 
 const resolvers = {
   Query: {
@@ -47,7 +49,7 @@ const server = new GraphQLServer({
     ...req,
     db: new Prisma({
       typeDefs: 'src/generated/prisma.graphql', // the auto-generated GraphQL schema of the Prisma API
-      endpoint: 'https://us1.prisma.sh/haider-malik-c1556d/hackernews-clone/dev', // the endpoint of the Prisma API
+      endpoint: process.env.PRISMA_ENDPOINT, // the endpoint of the Prisma API
       debug: true, // log all GraphQL queries & mutations sent to the Prisma API
       // secret: 'mysecret123', // only needed if specified in `database/prisma.yml`
     }),
