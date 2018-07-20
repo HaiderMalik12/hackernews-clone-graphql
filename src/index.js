@@ -51,6 +51,12 @@ const resolvers = {
           description
         }
       }, info)
+    },
+    updateLink() {
+
+    },
+    deleteLink() {
+
     }
   },
 }
