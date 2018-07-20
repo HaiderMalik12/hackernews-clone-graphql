@@ -1,7 +1,6 @@
 const { getUserId } = require('../../utils');
 function newLink(parent, { url, description }, ctx, info) {
     const userId = getUserId(ctx);
-    console.log(userId)
     return ctx.db.mutation.createLink({
         data: {
             url,
