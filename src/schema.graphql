@@ -12,4 +12,5 @@ type Mutation {
   createDraft(title: String!, text: String): Post
   deletePost(id: ID!): Post
   publish(id: ID!): Post
+  newLink(url :String!, description: String!): Link!
 }

@@ -44,6 +44,7 @@ const resolvers = {
         info,
       )
     },
+    //add resovler for newLink
   },
 }
 
