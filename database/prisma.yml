@@ -1,5 +1,6 @@
 # The endpoint of your Prisma API (deployed to a Prisma Sandbox).
-endpoint: ''
+#endpoint: ''
+endpoint: https://us1.prisma.sh/haider-malik-c1556d/hackernews-clone/dev
 
 # The file containing the definition of your data model.
 datamodel: datamodel.graphql

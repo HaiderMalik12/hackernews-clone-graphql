@@ -47,7 +47,7 @@ const server = new GraphQLServer({
     ...req,
     db: new Prisma({
       typeDefs: 'src/generated/prisma.graphql', // the auto-generated GraphQL schema of the Prisma API
-      // endpoint: 'https://eu1.prisma.sh/public-groveshift-680/hackernews-clone-node/dev', // the endpoint of the Prisma API
+      endpoint: 'https://us1.prisma.sh/haider-malik-c1556d/hackernews-clone/dev', // the endpoint of the Prisma API
       debug: true, // log all GraphQL queries & mutations sent to the Prisma API
       // secret: 'mysecret123', // only needed if specified in `database/prisma.yml`
     }),
