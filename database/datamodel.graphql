@@ -4,8 +4,8 @@ type Post {
   title: String!
   text: String!
 }
-type Link{
+type Link {
   id: ID! @unique
-  description : String!
-  url : String!
+  url: String!
+  description: String!
 }

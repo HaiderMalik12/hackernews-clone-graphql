@@ -1,9 +1,10 @@
-# import Post from "./generated/prisma.graphql"
+# import Post, Link from "./generated/prisma.graphql"
 
 type Query {
   feed: [Post!]!
   drafts: [Post!]!
   post(id: ID!): Post
+  linksFeed: [Link!]!
 }
 
 type Mutation {

@@ -13,6 +13,8 @@ const resolvers = {
     post(parent, { id }, ctx, info) {
       return ctx.db.query.post({ where: { id } }, info)
     },
+    //write resolver for fetch all the links
+    //
   },
   Mutation: {
     createDraft(parent, { title, text }, ctx, info) {
