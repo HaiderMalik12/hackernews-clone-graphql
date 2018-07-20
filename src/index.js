@@ -50,7 +50,7 @@ const resolvers = {
           url,
           description
         }
-      })
+      }, info)
     }
   },
 }
