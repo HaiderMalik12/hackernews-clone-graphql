@@ -44,7 +44,14 @@ const resolvers = {
         info,
       )
     },
-    //add resovler for newLink
+    newLink(parent, { url, description }, ctx, info) {
+      return ctx.db.mutation.createLink({
+        data: {
+          url,
+          description
+        }
+      })
+    }
   },
 }
 
