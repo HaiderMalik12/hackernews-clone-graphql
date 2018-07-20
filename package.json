@@ -7,8 +7,10 @@
     "prisma": "prisma"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^6.0.0",
     "graphql-yoga": "1.14.12",
+    "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.10",
     "prisma-binding": "2.1.1"
   },
