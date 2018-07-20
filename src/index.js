@@ -1,76 +1,11 @@
 const { GraphQLServer } = require('graphql-yoga')
 const { Prisma } = require('prisma-binding')
 require('dotenv').config()
+const { Query, Mutation } = require('./resolvers');
 
 const resolvers = {
-  Query: {
-    feed(parent, args, ctx, info) {
-      return ctx.db.query.posts({ where: { isPublished: true } }, info)
-    },
-    drafts(parent, args, ctx, info) {
-      return ctx.db.query.posts({ where: { isPublished: false } }, info)
-    },
-    post(parent, { id }, ctx, info) {
-      return ctx.db.query.post({ where: { id } }, info)
-    },
-    linksFeed(parent, args, ctx, info) {
-      return ctx.db.query.links({}, info)
-    },
-    singleLink(parent, { id }, ctx, info) {
-      return ctx.db.query.link({ where: { id } }, info)
-    }
-  },
-  Mutation: {
-    createDraft(parent, { title, text }, ctx, info) {
-      return ctx.db.mutation.createPost(
-        {
-          data: {
-            title,
-            text,
-          },
-        },
-        info,
-      )
-    },
-    deletePost(parent, { id }, ctx, info) {
-      return ctx.db.mutation.deletePost({ where: { id } }, info)
-    },
-    publish(parent, { id }, ctx, info) {
-      return ctx.db.mutation.updatePost(
-        {
-          where: { id },
-          data: { isPublished: true },
-        },
-        info,
-      )
-    },
-    newLink(parent, { url, description }, ctx, info) {
-      return ctx.db.mutation.createLink({
-        data: {
-          url,
-          description
-        }
-      }, info)
-    },
-    updateLink(parent, { id, url, description }, ctx, info) {
-      const link = {};
-      if (url) {
-        link.url = url
-      }
-      if (description) {
-        link.description = description
-      }
-      return ctx.db.mutation.updateLink({
-        data: link,
-        where: {
-          id
-        }
-      }, info)
-    },
-    deleteLink(parent, { id }, ctx, info) {
-      return ctx.db.mutation.deleteLink({ where: { id } }, info)
-    }
-  },
+  Query,
+  Mutation,
 }
 
 const server = new GraphQLServer({
