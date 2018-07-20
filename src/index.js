@@ -15,6 +15,9 @@ const resolvers = {
     },
     //write resolver for fetch all the links
     //
+    linksFeed(parent, args, ctx, info) {
+      return ctx.db.query.links({}, info)
+    }
   },
   Mutation: {
     createDraft(parent, { title, text }, ctx, info) {
