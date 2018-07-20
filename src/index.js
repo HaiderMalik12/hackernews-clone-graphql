@@ -15,6 +15,9 @@ const resolvers = {
     },
     linksFeed(parent, args, ctx, info) {
       return ctx.db.query.links({}, info)
+    },
+    singleLink(parent, { id }, ctx, info) {
+      return ctx.db.query.link({ where: { id } }, info)
     }
   },
   Mutation: {

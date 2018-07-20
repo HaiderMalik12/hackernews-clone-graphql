@@ -5,6 +5,7 @@ type Query {
   drafts: [Post!]!
   post(id: ID!): Post
   linksFeed: [Link!]!
+  singleLink(id: ID!): Link!
 }
 
 type Mutation {
