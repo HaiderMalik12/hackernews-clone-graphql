@@ -1,4 +1,4 @@
-function linksFeed(parent, { filter, skip, first }, ctx, info) {
+function linksFeed(parent, { filter, skip, first, orderBy }, ctx, info) {
     const where = filter
         ? {
             OR: [
@@ -7,7 +7,7 @@ function linksFeed(parent, { filter, skip, first }, ctx, info) {
             ]
         }
         : {};
-    return ctx.db.query.links({ where, skip, first }, info)
+    return ctx.db.query.links({ where, skip, first, orderBy }, info)
 }
 function singleLink(parent, { id }, ctx, info) {
     return ctx.db.query.link({ where: { id } }, info)

@@ -1,10 +1,10 @@
-# import Post, Link from "./generated/prisma.graphql"
+# import Post, Link, LinkOrderByInput from "./generated/prisma.graphql"
 
 type Query {
   feed: [Post!]!
   drafts: [Post!]!
   post(id: ID!): Post
-  linksFeed(filter: String, skip: Int, first: Int): [Link!]!
+  linksFeed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): [Link!]!
   singleLink(id: ID!): Link!
 }
 
