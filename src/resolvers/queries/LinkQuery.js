@@ -1,5 +1,5 @@
-function linksFeed(parent, args, ctx, info) {
-    const where = args.filter
+function linksFeed(parent, { filter, skip, first }, ctx, info) {
+    const where = filter
         ? {
             OR: [
                 { url_contains: args.filter },
@@ -7,7 +7,7 @@ function linksFeed(parent, args, ctx, info) {
             ]
         }
         : {};
-    return ctx.db.query.links({ where }, info)
+    return ctx.db.query.links({ where, skip, first }, info)
 }
 function singleLink(parent, { id }, ctx, info) {
     return ctx.db.query.link({ where: { id } }, info)
