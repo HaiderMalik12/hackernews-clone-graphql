@@ -4,7 +4,7 @@ type Query {
   feed: [Post!]!
   drafts: [Post!]!
   post(id: ID!): Post
-  linksFeed: [Link!]!
+  linksFeed(filter: String): [Link!]!
   singleLink(id: ID!): Link!
 }
 
